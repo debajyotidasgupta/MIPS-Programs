@@ -33,11 +33,12 @@ main:
     syscall
 
 fact:
-    add $a1, $a1, 1
-    addi $sp, $sp, -4
-    lw $t0, 4($sp)
-    mul $t0, $t0, $a1
-    sw $t0, 0($sp)
+    # $a0 = 0, 1, 2 _____ N
+    add $a1, $a1, 1         # increment the current value
+    addi $sp, $sp, -4       # DP , store using memory, memoization
+    lw $t0, 4($sp)          # load from memory
+    mul $t0, $t0, $a1       # cur = i*a[i-1]
+    sw $t0, 0($sp)          # store back in memory
 
     slt $t0, $a1, $a0
     bne $t0, $zero, fact
