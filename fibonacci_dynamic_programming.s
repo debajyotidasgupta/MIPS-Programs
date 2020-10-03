@@ -70,8 +70,6 @@ print:
     li $v0, 4
     syscall
 
-    j Exit
-
 Exit:
     li $v0, 10
     syscall
