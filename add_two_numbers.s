@@ -32,7 +32,6 @@ main:
     move $a0, $v0
 
     add $a0, $a0, $a1
-    j print
 
 print:    
     move $s0, $a0
@@ -48,8 +47,6 @@ print:
     la $a0, newline
     li $v0, 4
     syscall
-
-    j Exit
 
 Exit:
     li $v0, 10
