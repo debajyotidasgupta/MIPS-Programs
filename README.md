@@ -1,1 +1,1 @@
-# MIPS-CODE-EXAMPLES
+# MIPS-codes
